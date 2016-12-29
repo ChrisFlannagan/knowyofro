@@ -1,4 +1,4 @@
-**KNOW YO FRO**
+# KNOW YO FRO
 
 By: [Chris Flannagan](https://whoischris.com)
 
@@ -6,11 +6,13 @@ This is a simple php app for making a quiz based on a json file of images and la
 
 Originally built to be a quiz for identifying afros
 
-**SETUP**
+## SETUP
+
 npm install
+
 gulp
 
-**_NOTES ABOUT SHITTY CODED PARTS_**
+## NOTES ABOUT SHITTY CODED PARTS
 
 I also did this super fast and the sloppiness shows, but free time isn't what it
 used to be.  I had an idea and I wanted it working so that's what we have here.
