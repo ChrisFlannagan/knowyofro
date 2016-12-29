@@ -19,4 +19,5 @@ instead of key => value for fro image and fro answer.
 This made some of my code look terrible like loops within loops just to get the
 key => val of the options
 
-I also did this super fast so please feel free to make it better
+I also did this super fast so please feel free to make it better.  Being so simple I didn't
+get all crazy with the css.  It's plain jane bootstrap and just straight forward.

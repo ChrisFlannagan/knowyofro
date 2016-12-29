@@ -1,2 +1,4 @@
 .idea
 node_modules
+includes/style.css
+includes/scripts.js

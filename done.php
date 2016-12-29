@@ -51,5 +51,4 @@ foreach ( $ops as $op ) {
 		<div class="col-sm-2"></div>
 	</div>
 </div>
-</body>
-</html>
+<?php require_once( 'includes/footer.php' );

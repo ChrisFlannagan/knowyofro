@@ -90,6 +90,4 @@ $rnd = explode( ';', $unanswered[ mt_rand( 0, count( $unanswered ) - 1 ) ] );
 		<div class="col-sm-2"></div>
 	</div>
 </div>
-<!-- Score: <?php echo $_COOKIE['fromage']; ?> //-->
-</body>
-</html>
+<?php require_once( 'includes/footer.php' );
