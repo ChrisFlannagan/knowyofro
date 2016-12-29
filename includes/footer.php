@@ -1,7 +1,8 @@
 <div class="container-fluid footer">
 	<div class="row">
 		<div class="col-xs-12 text-center">
-			Site By: <a href="https://whoischris.com">Chris Flannagan</a> for <a href="https://srqnews.com">SRQ News</a>
+			Site By: <a href="https://whoischris.com">Chris Flannagan</a> for <a href="https://srqnews.com">SRQ News</a> |
+			Contribute at <a href="https://github.com/ChrisFlannagan/knowyofro/">GitHub</a>
 		</div>
 	</div>
 </div>

@@ -17,7 +17,7 @@
 	<script src="includes/scripts.js"></script>
 </head>
 <body>
-<a href="done.php?clear=true" class="startover">Start Over, GET FRESH!</a>
+<a href="answer.php?clear=true" class="startover">Start Over, GET FRESH!</a>
 <div class="container-fluid">
 	<div class="row header">
 		<div class="col-xs-12 text-center">
