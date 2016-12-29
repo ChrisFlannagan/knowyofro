@@ -1,7 +1,8 @@
 <?php
+require_once( 'includes/functions.php' );
 require_once( 'includes/header.php' );
 
-shuffle_assoc( $ops );
+$ops = get_all_options_shuffled();
 $unanswered = array();
 
 /**

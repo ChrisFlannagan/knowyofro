@@ -1,10 +1,17 @@
 <?php
+/**
+ * Answers are submitted to this page.  You can also use this page to clear your cookie and start over.
+ *
+ * $_POST['f'] is the image file name from the question submitted.
+ * I used this "starting;" value for initiating the cookie at the very beginning of coding.
+ * Probably not necessary anymore but fuck it, not fucking anything up so let's leave it
+ */
 require_once( 'includes/functions.php' );
 if ( isset ( $_GET['clear'] ) ) {
 	setcookie( 'fromage', 'starting;', time() + (86400 * 30), "/");
 } elseif ( isset( $_POST['f'] ) ) {
-	$ops = json_decode( file_get_contents( 'fros/fros.json' ), true );
-	shuffle_assoc( $ops );
+	/** Gather all options */
+	$ops = get_all_options_shuffled();
 	$correct = 'false';
 	$fin     = explode( ';', $_COOKIE['fromage'] );
 	foreach ( $ops as $op ) {

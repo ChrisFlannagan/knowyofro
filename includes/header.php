@@ -1,7 +1,3 @@
-<?php
-require_once( 'includes/functions.php' );
-$ops = json_decode( file_get_contents( 'fros/fros.json' ), true );
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

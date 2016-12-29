@@ -1,5 +1,8 @@
 <?php
+require_once( 'includes/functions.php' );
 require_once( 'includes/header.php' );
+
+$ops = get_all_options_shuffled();
 $final = array();
 foreach ( $ops as $op ) {
 	foreach ( $op as $key => $val ) {
