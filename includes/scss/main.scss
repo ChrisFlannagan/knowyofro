@@ -1,0 +1,33 @@
+@import 'bootstrap';
+@import 'variables';
+@import '../../node_modules/font-awesome/scss/font-awesome';
+
+.header {
+  background: #00d900;
+  color: #FFF;
+  font-size: 60px;
+  font-weight: bold;
+}
+.startover {
+  position: absolute;
+  z-index: 9999;
+  top: 5px;
+  right: 5px;
+  color: #00fbff;
+}
+.vertical-align {
+  padding-top: 55px;
+}
+.list-group-item img {
+  max-height: 45px;
+}
+.correct {
+  color: Green;
+  font-weight: bold;
+  font-size: 18px;
+}
+.incorrect {
+  color: Red;
+  font-weight: bold;
+  font-size: 18px;
+}

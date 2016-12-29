@@ -18,6 +18,7 @@ $ops = json_decode( file_get_contents( 'fros/fros.json' ), true );
 	<!--[if lt IE 9]>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	<script src="includes/scripts.js"></script>
 </head>
 <body>
 <a href="done.php?clear=true" class="startover">Start Over, GET FRESH!</a>

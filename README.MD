@@ -6,9 +6,13 @@ This is a simple php app for making a quiz based on a json file of images and la
 
 Originally built to be a quiz for identifying afros
 
+**SETUP**
+npm install
+gulp
+
 **_NOTES_**
 
-This shit is seriously weird at point.  I'm not a json expert and I managed
+This shit is seriously weird at points.  I'm not a json expert and I managed
 to build the data out so when pulled into php and parsed it's an array of arrays
 instead of key => value for fro image and fro answer.
 

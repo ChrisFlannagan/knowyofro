@@ -1,0 +1,15 @@
+{
+  "name": "know-yo-fro",
+  "versoin": "1.0.0",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "chart.js": "^2.4.0",
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
+  }
+}
