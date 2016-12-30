@@ -7,6 +7,7 @@
  * Probably not necessary anymore but fuck it, not fucking anything up so let's leave it
  */
 require_once( 'includes/functions.php' );
+$unanswered = array();
 if ( isset ( $_GET['clear'] ) ) {
 	setcookie( 'fromage', 'starting;', time() + (86400 * 30), "/");
 } elseif ( isset( $_POST['f'] ) ) {
@@ -31,4 +32,4 @@ if ( isset ( $_GET['clear'] ) ) {
 	setcookie( 'fromage', implode( ';', $fin ) . ';' . $_POST['f'] . '|' . $correct . ';', time() + (86400 * 30), "/");
 }
 ?>
-<script>location.href="index.php";</script>
+<script>location.href="index.php?count=<?php echo time(); ?>";</script>

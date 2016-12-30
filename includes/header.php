@@ -1,3 +1,9 @@
+<?php
+if( strpos( $_SERVER["HTTP_HOST"], '.dev' ) === false && $_SERVER['HTTPS'] != 'on' ) {
+	header( "Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] );
+	exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

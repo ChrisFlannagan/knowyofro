@@ -26,7 +26,7 @@ foreach ( explode( ';', $_COOKIE['fromage'] ) as $answered ) {
 			method: 'share_open_graph',
 			action_type: 'og.likes',
 			action_properties: JSON.stringify({
-				object:'http://knowyofro.com/share.php?c=<?php echo count( $correct ); ?>',
+				object:'https://knowyofro.com/share.php?c=<?php echo count( $correct ); ?>',
 			})
 		}, function(response){
 			// Debug response (optional)
@@ -42,8 +42,8 @@ foreach ( explode( ';', $_COOKIE['fromage'] ) as $answered ) {
 			<p>Scroll To See Correct Answers</p>
 			<p>
 				<a href="#" onclick="fb_share();">
-					<img src="http://knowyofro.com/assets/sharefb.jpg" />
-					<img src="http://knowyofro.com/assets/<?php echo count( $correct ); ?>.jpg" />
+					<img src="https://knowyofro.com/assets/sharefb.jpg" />
+					<img src="https://knowyofro.com/assets/<?php echo count( $correct ); ?>.jpg" />
 				</a>
 			</p>
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

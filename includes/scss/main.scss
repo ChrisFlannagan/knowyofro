@@ -18,7 +18,7 @@ img {
   z-index: 9999;
   top: 5px;
   right: 5px;
-  color: #00fbff;
+  color: #f7ff00;
 }
 .counter {
   font-size: 40px;
@@ -42,10 +42,12 @@ img {
   font-size: 18px;
 }
 .footer {
-  background: #fff;
-  bottom: 0px;
+  background: rgba(234, 234, 234, 0.9);
+  bottom: 0;
+  padding-top: 5px;
   position: fixed;
   width: 100%;
+  box-shadow: 0px -2px 43px #333;
 }
 @media screen and (max-width: 750px) {
   .header {
@@ -53,10 +55,22 @@ img {
     padding-top: 20px;
   }
   .btn {
+    margin-bottom: 20px;
     text-align: center;
     width: 100%;
   }
   .top-mobile {
     max-height: 375px;
+  }
+  .frobox {
+    text-align: center;
+  }
+  .frobox img {
+    margin: 0 auto;
+    margin-top: 0px;
+    max-width: 75%;
+  }
+  .select-ops {
+    padding-top: 0px;
   }
 }

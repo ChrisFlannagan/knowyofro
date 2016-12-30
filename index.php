@@ -85,10 +85,10 @@ foreach( $ops as $op ) { // Loop through all our options
 			<script>
 				(adsbygoogle = window.adsbygoogle || []).push({});
 			</script></div>
-		<div class="col-sm-4">
+		<div class="col-sm-4 frobox">
 			<img src="fros/<?php echo $show; ?>" class="img-responsive" />
 		</div>
-		<div class="col-sm-4 vertical-align">
+		<div class="col-sm-4 vertical-align select-ops">
 			<form action="answer.php" method="post">
 				<ul class="list-group">
 				<?php
