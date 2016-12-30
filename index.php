@@ -51,6 +51,11 @@ $rnd = explode( ';', $unanswered[ mt_rand( 0, count( $unanswered ) - 1 ) ] );
 ?>
 <div class="container">
 	<div class="row">
+		<div class="col-xs-12 text-center counter">
+			Fro <?php echo count( $ops ) - count( $unanswered ) + 1; ?> or of <?php echo count( $ops ); ?>
+		</div>
+	</div>
+	<div class="row">
 		<div class="col-sm-2"></div>
 		<div class="col-sm-4 vertical-align">
 			<form action="answer.php" method="post">
