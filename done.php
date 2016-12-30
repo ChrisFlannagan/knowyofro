@@ -9,25 +9,56 @@ foreach ( $ops as $op ) {
 		$final[ $val ] = $key;
 	}
 }
+$correct = array();
+$incorrect = array();
+foreach ( explode( ';', $_COOKIE['fromage'] ) as $answered ) {
+	if ( strpos( $answered, '|false' ) !== false ) {
+		$incorrect[ str_replace( '|false', '', $answered ) ] = $final[ str_replace( '|false', '', $answered ) ];
+	}
+	if ( strpos( $answered, '|true' ) !== false ) {
+		$correct[ str_replace( '|true', '', $answered ) ] = $final[ str_replace( '|true', '', $answered ) ];
+	}
+}
 ?>
+<script>
+	function fb_share() {
+		FB.ui({
+			method: 'share_open_graph',
+			action_type: 'og.likes',
+			action_properties: JSON.stringify({
+				object:'http://knowyofro.com/share.php?c=<?php echo count( $correct ); ?>',
+			})
+		}, function(response){
+			// Debug response (optional)
+			console.log(response);
+		});
+	}
+</script>
 <div class="container">
 	<div class="row">
 		<div class="col-sm-2"></div>
+		<div class="col-sm-4 top-mobile">
+			<h3>You scored: <?php echo count( $correct ); ?> out of <?php echo count( $correct ) + count( $incorrect ); ?></h3>
+			<p>Scroll To See Correct Answers</p>
+			<p>
+				<a href="#" onclick="fb_share();">
+					<img src="http://knowyofro.com/assets/sharefb.jpg" />
+					<img src="http://knowyofro.com/assets/<?php echo count( $correct ); ?>.jpg" />
+				</a>
+			</p>
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- KnowYoFro - Results Square -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-9432753157740043"
+			     data-ad-slot="4421994971"
+			     data-ad-format="auto"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
 		<div class="col-sm-4">
-			<?php
-			$correct = array();
-			$incorrect = array();
-			foreach ( explode( ';', $_COOKIE['fromage'] ) as $answered ) {
-				if ( strpos( $answered, '|false' ) !== false ) {
-					$incorrect[ str_replace( '|false', '', $answered ) ] = $final[ str_replace( '|false', '', $answered ) ];
-				}
-				if ( strpos( $answered, '|true' ) !== false ) {
-					$correct[ str_replace( '|true', '', $answered ) ] = $final[ str_replace( '|true', '', $answered ) ];
-				}
-			}
-			?>
-
-			<h2>You scored: <?php echo count( $correct ); ?> out of <?php echo count( $correct ) + count( $incorrect ); ?></h2>
+			<h2>Your Results</h2>
 
 			<ul class="list-group">
 			<?php
@@ -47,9 +78,6 @@ foreach ( $ops as $op ) {
 			}
 			?>
 			</ul>
-		</div>
-		<div class="col-sm-4">
-			Share on FB!
 		</div>
 		<div class="col-sm-2"></div>
 	</div>

@@ -2,6 +2,11 @@
 @import 'variables';
 @import '../../node_modules/font-awesome/scss/font-awesome';
 
+img {
+  @extend .img-responsive;
+  max-width: 100%;
+}
+
 .header {
   background: #00d900;
   color: #FFF;
@@ -37,7 +42,21 @@
   font-size: 18px;
 }
 .footer {
+  background: #fff;
   bottom: 0px;
   position: fixed;
   width: 100%;
+}
+@media screen and (max-width: 750px) {
+  .header {
+    font-size: 30px;
+    padding-top: 20px;
+  }
+  .btn {
+    text-align: center;
+    width: 100%;
+  }
+  .top-mobile {
+    max-height: 375px;
+  }
 }
