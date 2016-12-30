@@ -20,6 +20,10 @@ img {
   right: 5px;
   color: #f7ff00;
 }
+.minireply {
+  font-size:10px;
+  color:#333;
+}
 .counter {
   font-size: 40px;
   padding-top: 20px;
@@ -54,6 +58,9 @@ img {
     font-size: 30px;
     padding-top: 20px;
   }
+  .reply {
+    font-size: 15px;
+  }
   .btn {
     margin-bottom: 20px;
     text-align: center;
@@ -72,5 +79,8 @@ img {
   }
   .select-ops {
     padding-top: 0px;
+  }
+  .footer {
+    position: relative;
   }
 }

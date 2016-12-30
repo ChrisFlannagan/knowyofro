@@ -8,18 +8,20 @@
  */
 require_once( 'includes/functions.php' );
 $unanswered = array();
+$reply = 'correct=false';
 if ( isset ( $_GET['clear'] ) ) {
 	setcookie( 'fromage', 'starting;', time() + (86400 * 30), "/");
+	$reply = '';
 } elseif ( isset( $_POST['f'] ) ) {
 	/** Gather all options */
 	$ops = get_all_options_shuffled();
-	$correct = 'false';
 	$fin     = explode( ';', $_COOKIE['fromage'] );
 	foreach ( $ops as $op ) {
 		foreach ( $op as $key => $val ) {
 			//echo $key . '-' . $_POST['answer'] . '-' . $val . '-' . $_POST['f'] . '<hr />';
 			if ( $key == $_POST['answer'] && $val == $_POST['f'] ) {
 				$correct = 'true';
+				$reply = 'correct=true';
 			}
 
 			// If not answered yet and not previous question
@@ -32,4 +34,4 @@ if ( isset ( $_GET['clear'] ) ) {
 	setcookie( 'fromage', implode( ';', $fin ) . ';' . $_POST['f'] . '|' . $correct . ';', time() + (86400 * 30), "/");
 }
 ?>
-<script>location.href="index.php?count=<?php echo time(); ?>";</script>
+<script>location.href="index.php?count=<?php echo time(); ?>&<?php echo $reply; ?>";</script>

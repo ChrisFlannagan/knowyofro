@@ -71,6 +71,20 @@ foreach( $ops as $op ) { // Loop through all our options
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 text-center counter">
+			<?php
+				if ( isset( $_GET['correct'] ) ) {
+					$correct = "CORRECT";
+					?>
+					<p class="reply" style="<?php
+					if ( $_GET['correct'] == 'false' ) {
+						echo 'color: Red;';
+						$correct = "INCORRECT";
+					}
+					?>">Last answer was <?php echo $correct; ?></p>
+					<p class="minireply">See all answers when you finish</p>
+					<?php
+				}
+			?>
 			Fro <?php echo count( $ops ) - count( $unanswered ) + 1; ?> of <?php echo count( $ops ); ?>
 		</div>
 	</div>
