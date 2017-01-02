@@ -52,14 +52,16 @@ require_once( 'includes/header.php' );
 $cnt = 0; // Only want 5 of em
 $final_ops = array(); // These ops will be what we loop through to display multiple choice
 /** We have to make sure our random selected guy is in this final array */
-$final_op = '<li class="list-group-item"><input type="radio" name="answer" value="' . $rnd[0] . '"> ' . $rnd[0] . '</li>';
+$final_op = '<li class="list-group-item"><input id="' . str_replace(' ', '', $rnd[0] ) . '" type="radio" name="answer" value="' . $rnd[0] . '">';
+$final_op .= ' <label for="' . str_replace(' ', '', $rnd[0] ) . '">' . $rnd[0] . '</label></li>';
 $show = $rnd[1]; // let's get that image for the correct choice
 $final_ops[] = $final_op; // Ok, start our new array with the random fro we selected to be the current question
 foreach( $ops as $op ) { // Loop through all our options
 	foreach( $op as $key => $val ) { // Loop through the single item so we can get key, I fucked up the original json and didn't feel like fixing late in the game
 		if ( $cnt < 5 ) { // We only need 5 of em
 			/** Build our quiz options */
-			$next = '<li class="list-group-item"><input type="radio" name="answer" value="' . $key . '"> ' . $key . '</li>';
+			$next = '<li class="list-group-item"><input id="' . str_replace(' ', '', $key ) . '" type="radio" name="answer" value="' . $key . '">';
+			$next .= ' <label for="' . str_replace(' ', '', $key )  . '">' . $key  . '</label></li>';
 			if ( $next != $final_op ) { // We don't want to add the one we already added that's the right one
 				$final_ops[] = $next;
 				$cnt ++;
@@ -113,8 +115,9 @@ foreach( $ops as $op ) { // Loop through all our options
 				?>
 				</ul>
 				<input type="hidden" name="f" value="<?php echo $show; ?>" />
-				<input type="submit" class="btn btn-info" />
+				<input type="submit" class="btn btn-info" style="display:none;" />
 			</form>
+			<button onclick="window.location.href='answer.php?clear=true';" class="btn btn-primary">Start Over, GET FRESH!</button>
 		</div>
 		<div class="col-sm-2"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<!-- KnowYoFro - Responsive -->

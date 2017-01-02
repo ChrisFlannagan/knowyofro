@@ -14,11 +14,12 @@ if ( isset ( $_GET['clear'] ) ) {
 	$reply = '';
 } elseif ( isset( $_POST['f'] ) ) {
 	/** Gather all options */
+	$correct = 'false';
 	$ops = get_all_options_shuffled();
 	$fin     = explode( ';', $_COOKIE['fromage'] );
 	foreach ( $ops as $op ) {
 		foreach ( $op as $key => $val ) {
-			//echo $key . '-' . $_POST['answer'] . '-' . $val . '-' . $_POST['f'] . '<hr />';
+			// If answered correctly let's mark as true
 			if ( $key == $_POST['answer'] && $val == $_POST['f'] ) {
 				$correct = 'true';
 				$reply = 'correct=true';

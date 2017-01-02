@@ -12,13 +12,15 @@ foreach ( $ops as $op ) {
 $correct = array();
 $incorrect = array();
 foreach ( explode( ';', $_COOKIE['fromage'] ) as $answered ) {
-	if ( strpos( $answered, '|false' ) !== false ) {
-		$incorrect[ str_replace( '|false', '', $answered ) ] = $final[ str_replace( '|false', '', $answered ) ];
-	}
-	if ( strpos( $answered, '|true' ) !== false ) {
-		$correct[ str_replace( '|true', '', $answered ) ] = $final[ str_replace( '|true', '', $answered ) ];
+	if ( strpos( $answered, '|' ) !== false ) {
+		if ( strpos( $answered, '|true' ) !== false ) {
+			$correct[ str_replace( '|true', '', $answered ) ] = $final[ str_replace( '|true', '', $answered ) ];
+		} else {
+			$incorrect[ str_replace( '|false', '', $answered ) ] = $final[ str_replace( '|false', '', $answered ) ];
+		}
 	}
 }
+
 ?>
 <script>
 	function fb_share() {
@@ -38,7 +40,7 @@ foreach ( explode( ';', $_COOKIE['fromage'] ) as $answered ) {
 	<div class="row">
 		<div class="col-sm-2"></div>
 		<div class="col-sm-4 top-mobile">
-			<h3>You scored: <?php echo count( $correct ); ?> out of <?php echo count( $correct ) + count( $incorrect ); ?></h3>
+			<h3>You scored: <?php echo count( $correct ); ?> out of <?php echo count( $ops ); ?></h3>
 			<p>Scroll To See Correct Answers</p>
 			<p>
 				<a href="#" onclick="fb_share();">
@@ -59,7 +61,7 @@ foreach ( explode( ';', $_COOKIE['fromage'] ) as $answered ) {
 		</div>
 		<div class="col-sm-4">
 			<h2>Your Results</h2>
-
+			<button onclick="window.location.href='answer.php?clear=true';" class="btn btn-primary">Start Over, GET FRESH!</button>
 			<ul class="list-group">
 			<?php
 			foreach ( $correct as $img => $name ) {

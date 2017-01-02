@@ -14,11 +14,12 @@ img {
   font-weight: bold;
 }
 .startover {
-  position: absolute;
-  z-index: 9999;
-  top: 5px;
-  right: 5px;
-  color: #f7ff00;
+  color: #0041ff;
+  background: #FFF;
+  border: solid 1px #0041ff;
+  padding: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .minireply {
   font-size:10px;
